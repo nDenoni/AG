@@ -1,0 +1,118 @@
+body {
+    font-family: 'Minecraft', Arial, sans-serif;
+    background-color: #6b8e23; /* Verde inspirado no gramado do Minecraft */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo no topo */
+    height: 100vh;
+    margin: 0;
+    background-image: url('img.png');
+    background-size: cover;
+    padding-top: 50px; /* Ajuste o valor conforme necessário para posicionar para cima */
+}
+
+.container {
+    text-align: center;
+    background: #7f7f7f; /* Cinza para parecer pedra */
+    padding: 30px;
+    border: 5px solid #4c4c4c; /* Contorno de pedra */
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 26px;
+    color: #fff;
+    text-shadow: 2px 2px #000; /* Estilo 3D do texto */
+}
+
+.buttons {
+    margin-top: 20px; /* Mantém um espaço acima dos botões */
+    width: 557px;
+}
+
+button {
+    font-size: 18px;
+    padding: 15px 30px;
+    margin: 10px; /* Adiciona espaço ao redor de cada botão */
+    border: 3px solid #3c3c3c;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Minecraft', Arial, sans-serif;
+    box-shadow: 0 4px #2a2a2a;
+}
+
+#sim {
+    background-color: #5cb85c; /* Verde brilhante como blocos de slime */
+    color: #fff;
+}
+
+#sim:hover {
+    background-color: #4cae4c;
+}
+
+#nao {
+    background-color: #d9534f; /* Vermelho como lava */
+    color: #fff;
+    position: absolute; /* Para que o botão possa se mover */
+}
+
+#nao:hover {
+    background-color: #c9302c;
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+}
+
+/* Textura personalizada */
+@font-face {
+    font-family: 'Minecraft';
+    src: url('https://fonts.cdnfonts.com/s/17893/MinecraftRegular-bW0x3.ttf') format('truetype');
+}
+
+/* Estilo do coração pixelado */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    animation: floatHearts 3s ease-in forwards;
+    pointer-events: none; /* Garante que o clique não afete os corações */
+}
+
+.heart.mine {
+    width: 40px; /* Ajuste o tamanho do coração */
+    height: 40px;
+}
+
+.heart.mine img {
+    width: 100%; /* Faz a imagem preencher o container */
+    height: 100%;
+}
+
+/* Variar a animação e o tempo para criar um efeito de confete */
+.heart:nth-child(even) {
+    animation-duration: 2.5s;
+    animation-delay: 0.5s;
+}
+
+.heart:nth-child(odd) {
+    animation-duration: 3.5s;
+    animation-delay: 1s;
+}
